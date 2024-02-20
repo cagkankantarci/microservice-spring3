@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: lesson-service
+  config:
+    import: "optional:configserver:http://localhost:8088"
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    template:
+      default-topic: notification-topic
